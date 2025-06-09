@@ -1,58 +1,31 @@
-<?php
-error_reporting(E_ALL);  // Mostrar todos los errores para ayudar en la depuración
-session_start();
-
-// Funciones para obtener datos de los campos, con verificación
-function getDescripcion() {
-    return isset($_POST['txtDescripcion']) ? $_POST['txtDescripcion'] : '';  // Retorna vacío si no está definido
-}
-
-function getStock() {
-    return isset($_POST['txtStock']) ? $_POST['txtStock'] : '';  // Retorna vacío si no está definido
-}
-
-function getPrecio() {
-    return isset($_POST['txtPrecio']) ? $_POST['txtPrecio'] : '';  // Retorna vacío si no está definido
-}
-?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link href="estilo.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Presentación del Proyecto - Lucha Libre</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #ffd700;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <?php include 'encabezado.php'; ?>
-    </header>
-
-    <section>
-        <form name="frmPrincipal" method="POST" action="agregarProducto.php">
-            <table border="1" width="600" cellspacing="10" cellpadding="0">
-                <tr>
-                    <td>Descripción del Producto</td>
-                    <td><input type="text" name="txtDescripcion" value="<?php echo htmlspecialchars(getDescripcion()); ?>" size="60"/></td>
-                </tr>
-                <tr>
-                    <td>Stock</td>
-                    <td><input type="text" name="txtStock" value="<?php echo htmlspecialchars(getStock()); ?>" /></td>
-                </tr>
-                <tr>
-                    <td>Precio de producto</td>
-                    <td><input type="text" name="txtPrecio" value="<?php echo htmlspecialchars(getPrecio()); ?>" /></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="btnListado" onclick="this.form.action = 'listadoProductos.php'" value="Ver listado de productos" /></td>
-                    <td><input type="submit" name="btnRegistrar" onclick="this.form.action = 'agregarProducto.php'" value="Registrar producto" /></td>
-                </tr>
-            </table>
-        </form>
-    </section>
-
-    <footer>
-        <?php include 'pie.php'; ?>
-    </footer>
+  <h1>🥊 Sistema de Gestión de Lucha Libre</h1>
+  <p>Este es un proyecto académico en PHP y MySQL para gestionar luchadores, combates y eventos de lucha libre.</p>
+  <p>Revisa el código fuente completo en el repositorio:</p>
+  <a href="https://github.com/JesusCa1/lucha-libre" style="color: #fff; text-decoration: underline;">Ver en GitHub</a>
 </body>
 </html>
-
